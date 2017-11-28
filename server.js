@@ -20,7 +20,7 @@ io.on('connection', function(socket) {
         let { name, location, lang, comments } = data;
         let lucky = Math.floor((Math.random() * 1000) + 1);
         let mesg = `You emitted the following information to the server: `;
-        mesg += `{ name: ${name}, location: ${location}, language: ${lang}, comment: ${comments}`;
+        mesg += `{ name: '${name}', location: '${location}', language: '${lang}', comment: '${comments}' }`;
         // mesg += `\n\nYour lucky number emitted by the server is ${lucky}`
         socket.emit('updated_message', mesg);
         socket.emit('random_number', lucky);

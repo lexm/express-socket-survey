@@ -25,9 +25,11 @@
                 });
             });
             socket.on('updated_message', function(mesg) {
+                $('#message').text(mesg);
                 console.log(mesg);
             });
             socket.on('random_number', function (lucky) {
+                $('#lucky').text(`Your lucky number emitted by the server is ${lucky}`);
                 console.log(lucky);
             });
         });
@@ -36,7 +38,10 @@
 </head>
 
 <body>
-    <div id="stuff"></div>
+    <div>
+        <h4 id="message"></h4>
+        <h4 id="lucky"></h4>
+    </div>
     <form action="/postit" method="POST">
         <fieldset>
             <label for="name">Your Name:</label>
