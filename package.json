@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/lexm/express-socket-survey#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "socket.io": "^2.0.4"
   }
 }

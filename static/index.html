@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="jquery/dist/jquery.js"></script>     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var socket = io.connect();
+            $('form').submit(function(e) {
+                e.preventDefault();
+                let name = $('input[name="name"]').val();
+                let location = $('#location').val();
+                let lang = $('#lang').val();
+                let comments = $('#comments').val();
+                socket.emit('posting_form', {
+                    "name": name,
+                    "location": location,
+                    "lang": lang,
+                    "comments": comments
+                });
+            });
+            socket.on('updated_message', function(mesg) {
+                console.log(mesg);
+            });
+            socket.on('random_number', function (lucky) {
+                console.log(lucky);
+            });
+        });
+    </script>
     <title>Survey Form</title>
 </head>
 
 <body>
+    <div id="stuff"></div>
     <form action="/postit" method="POST">
         <fieldset>
             <label for="name">Your Name:</label>
