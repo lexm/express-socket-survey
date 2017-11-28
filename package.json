@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lexm/express-socket-survey/issues"
   },
-  "homepage": "https://github.com/lexm/express-socket-survey#readme"
+  "homepage": "https://github.com/lexm/express-socket-survey#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
