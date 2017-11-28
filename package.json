@@ -1,0 +1,19 @@
+{
+  "name": "express-socket-survey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexm/express-socket-survey.git"
+  },
+  "author": "LEx Myers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lexm/express-socket-survey/issues"
+  },
+  "homepage": "https://github.com/lexm/express-socket-survey#readme"
+}
